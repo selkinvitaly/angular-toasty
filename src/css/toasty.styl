@@ -1,0 +1,84 @@
+.g-angular-toasty
+  position: fixed
+  z-index: 999999
+
+  &_position_top-left
+    top: 12px
+    left: 12px
+
+  &_position_top-right
+    top: 12px
+    right: 12px
+
+  &_position_bottom-right
+    bottom: 12px
+    right: 12px
+
+  &_position_bottom-left
+    bottom: 12px
+    left: 12px
+
+  &_position_top-center
+    top: 12px
+    left: 50%
+    transform: translate(-50%, 0)
+
+  &_position_bottom-center
+    bottom: 12px
+    left: 50%
+    transform: translate(-50%, 0)
+
+  &-itm
+    cursor: pointer
+    margin: 0 0 6px
+    padding: 0
+    width: 285px
+    height: 65px
+    display: table
+    background-size: 24px 24px
+    background-position: 15px center
+    background-repeat: no-repeat
+    box-shadow: 0 0 5px 0 rgba(#000, .25)
+    opacity: .9
+    position: relative
+
+    &_shake
+      animation-name: toasty-shake
+      animation-duration: .5s
+      animation-iteration-count: infinite
+      animation-timing-function: linear
+      transform-origin: 50% 50%
+
+      &:hover
+        animation-play-state: paused
+
+    &__close
+      padding: 0
+      cursor: pointer
+      background: transparent
+      border: 0
+      appearance: none
+      position: absolute
+      right: 10px
+      top: 3px
+      opacity: .5
+
+      &:hover
+      &:focus
+        text-decoration: none
+        cursor: pointer
+        opacity: 1
+
+    &-txt
+      padding: 5px 20px 5px 60px
+      display: table-cell
+      vertical-align: middle
+
+      a
+      label
+        &:hover
+          text-decoration: none
+
+
+    &__title
+      font-weight: bold

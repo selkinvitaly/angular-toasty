@@ -1,0 +1,67 @@
+@require 'variables'
+
+.g-angular-toasty
+  &-itm
+    &_theme_default
+      font-family: $default-font-family
+      font-size: $default-font-size
+      border-radius: $default-border-raduis
+
+    &_theme_default &__close
+      &::after
+        content: $default-close-button-content
+        color: $default-close-button-color
+        font-size: 17px
+        font-weight: 100
+
+    &_theme_default &-txt
+      color: $default-text-color
+
+      a
+      label
+        color: $default-text-color
+
+        &:hover
+          color: darken($default-text-color, 5%)
+
+    &_theme_default &__title
+      font-size: $default-font-size-title
+
+
+    &_theme_default&_type_default
+      background-image: $default-default-background-image
+      background-color: $default-default-background-color
+
+    &_theme_default&_type_default &__close
+      &::after
+        color: $default-default-close-button-color !important
+
+    &_theme_default&_type_default &-txt
+      color: $default-default-text-color
+
+      a
+      label
+        color: $default-default-text-color
+
+        &:hover
+          color: lighten($default-default-text-color, 5%)
+
+    &_theme_default&_type_info
+      background-image: $default-info-background-image
+      background-color: $default-info-background-color
+
+    &_theme_default&_type_wait
+      background-image: $default-wait-background-image
+      background-color: $default-wait-background-color
+
+    &_theme_default&_type_error
+      background-image: $default-error-background-image
+      background-color: $default-error-background-color
+
+    &_theme_default&_type_success
+      background-image: $default-success-background-image
+      background-color: $default-success-background-color
+
+    &_theme_default&_type_warning
+      background-image: $default-warning-background-image
+      background-color: $default-warning-background-color
