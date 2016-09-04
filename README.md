@@ -2,12 +2,17 @@ Angular Toasty
 =================
 **Angular Toasty** is a simple standalone AngularJS module with extensive features that provides growl-style alerts and messages for your app.
 
+#### Differences between this fork and the [original repo](https://github.com/teamfa/angular-toasty)
+* one theme (for example)
+* renamed css selectors in accordance with [BEM](https://en.bem.info/)
+* now `theme` option can be any
+* minor changes
+
 #### Demo
 
 [Check it out!](http://teamfa.com/angular-toasty/example/)
 
 #### Current Features
-* 3 Themes (Default, Material Design & Bootstrap 3)
 * Global/Individual timeouts
 * Shaking Toasts
 * Toaster sound
@@ -17,18 +22,18 @@ Angular Toasty
 * HTML allowed
 
 #### Installation
-###### Install from Bower:
+###### Install from npm:
 
 ```HTML
-bower install angular-toasty
+npm i selkinvitaly/angular-toasty
 ```
 ###### Add dependancies to HTML (AngularJS required)
 
 ```HTML
-<link href="./bower_components/angular-toasty/dist/angular-toasty.min.css" rel="stylesheet" />
+<link href="./node_modules/angular-toasty/dist/angular-toasty.min.css" rel="stylesheet" />
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-<script src="./bower_components/angular-toasty/dist/angular-toasty.min.js"></script>
+<script src="./node_modules/angular-toasty/dist/angular-toasty.min.js"></script>
 ```
 
 ###### Add the toasty module to your Angular app:
@@ -75,7 +80,7 @@ timeout: 5000, // {int} How long (in miliseconds) the toasty shows before it's r
 sound: true, // {bool} Whether to play a sound when a toast is added
 html: false, // {bool} Whether HTML is allowed in toasts
 shake: false, // {bool} Whether to shake the toasts
-theme: 'default' // {string} What theme to use; default, material or bootstrap
+theme: 'default' // {string} What theme to use; default
 ```
 > Config items marked with * cannot be overridden at an individual level
 
@@ -108,7 +113,7 @@ toasty({
 	sound: false,
 	html: true,
 	shake: true,
-	theme: 'bootstrap'
+	theme: 'default'
 });
 ```
 
@@ -119,7 +124,7 @@ toasty({
 You can easily clear/remove a toast from the view by calling the `clear` method. To remove all at once, just call the method with no ID.
 
 ```
-toasty.clear(); // Clear all 
+toasty.clear(); // Clear all
 toasty.clear(id); // Remove a single toast by it's ID
 ```
 
