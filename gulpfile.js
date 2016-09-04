@@ -2,7 +2,8 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var del = require('del');
-var less = require('gulp-less');
+var stylus = require('gulp-stylus');
+var csscomb = require('gulp-csscomb');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sequence = require('run-sequence');
@@ -27,11 +28,12 @@ gulp.task('scripts:prod', function() {
 });
 
 gulp.task('styles', function() {
-    return gulp.src('less/**/base.less', { cwd: './src'})
-    	.pipe(less())
-    	.pipe(concat(project + '.css'))
-    	.pipe(autoprefixer('last 3 versions', 'ie 9'))
-    	.pipe(gulp.dest('./dist'));
+  return gulp.src('src/css/index.styl')
+    .pipe(stylus())
+    .pipe(autoprefixer('last 3 versions', 'ie 9'))
+    .pipe(csscomb())
+    .pipe(rename({basename: project}))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('styles:prod', function() {
@@ -48,12 +50,12 @@ gulp.task('clean', function() {
 });
 
 gulp.task('watch', function() {
-    watch('./src/less/**/*.less', function() {
-    	gulp.start('styles');
-    });
-    watch('./src/js/**/*.js', function() {
-    	gulp.start('scripts');
-    });
+  watch('./src/less/**/*.less', function() {
+  	gulp.start('styles');
+  });
+  watch('./src/js/**/*.js', function() {
+  	gulp.start('scripts');
+  });
 });
 
 gulp.task('default', function () {

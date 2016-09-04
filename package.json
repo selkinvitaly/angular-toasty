@@ -1,20 +1,36 @@
 {
   "name": "angular-toasty",
   "version": "1.0.5",
-  "author": "Invertase",
+  "description": "Angular Toasty is a simple standalone AngularJS module with extensive features that provides growl-style alerts and messages for your app.",
+  "main": "dist/angular-toasty.js",
+  "dependencies": {},
   "devDependencies": {
-    "bower": "~1.4.1",
     "del": "^1.2.0",
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "~2.0.0",
     "gulp-concat": "^2.6.0",
-    "gulp-less": "^3.0.3",
+    "gulp-csscomb": "^3.0.7",
     "gulp-minify-css": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sequence": "^0.4.0",
+    "gulp-stylus": "^2.5.0",
     "gulp-uglify": "^1.2.0",
     "gulp-watch": "^4.3.4",
     "run-sequence": "^1.1.2",
     "yargs": "~3.16.1"
-  }
+  },
+  "scripts": {
+    "build:dev": "node_modules/.bin/gulp",
+    "build:prod": "node_modules/.bin/gulp --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selkinvitaly/angular-toasty.git"
+  },
+  "author": "Invertase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selkinvitaly/angular-toasty/issues"
+  },
+  "homepage": "https://github.com/selkinvitaly/angular-toasty#readme"
 }
